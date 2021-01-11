@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import getData from '../src/network';
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    getData('The Grinch');
+    // console.log(the data)
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
