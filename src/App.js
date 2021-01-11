@@ -6,8 +6,13 @@ import { useEffect } from 'react';
 function App() {
 
   useEffect(() => {
-    getData('The Grinch');
-    // console.log(the data)
+    getData('The Grinch')
+    .then(data => {
+      console.log("data from app", data)
+    })
+    .catch(error => {
+      console.log("error getting data, maybe show an error message to the user instead of just console logging")
+    })
   }, [])
 
   return (
