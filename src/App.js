@@ -17,14 +17,21 @@ export default function App() {
      setMovies(result);
    })
   }
+  function nominateMovie() {
+    console.log('NOMINATE ME!');
+  }
+
   return (
     <div>
       <p onClick={getData}></p>
       <MovieSearch onSubmit={onSubmit}></MovieSearch>
 
       <h1>HI</h1>
-    <ResultsList movies={movies}></ResultsList>
+    <ResultsList movies={movies} clickMe={nominateMovie}></ResultsList>
     </div>
   );
+
 }
+
+
 

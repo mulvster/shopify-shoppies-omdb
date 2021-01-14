@@ -13,7 +13,7 @@ export default function ResultsList(props) {
       return (
         <div className="movie" key={index}>
           <h3>Movie {index + 1}</h3>
-          <h2>{movieParam.Title}</h2>
+          <h2>{movieParam.Title}</h2><button onClick={props.clickMe}>Nominate me</button>
 
           {/* <div className="details">
             <p>👨: {actors}</p>
