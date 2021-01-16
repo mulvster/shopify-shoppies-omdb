@@ -4,16 +4,21 @@ export default function ResultsList(props) {
   return (
     <div className="result-list">
     {!!props.movies &&
-  props.movies.map((movieParam, index) => {
-    const movieTitle = movieParam.Title;
-    console.log(movieTitle)
-      const movieReleaseDate = new Date(movieParam.Released).toDateString();
+  props.movies.map((movie, index) => {
+    const movieTitle = movie.Title;
+    const movieid = movie.imdbID;
+
+      const movieReleaseDate = new Date(movie.Released).toDateString();
       {/* const actors = movie.actors.join(', '); */}
 
       return (
-        <div className="movie" key={index}>
-          <h3>Movie {index + 1}</h3>
-          <h2>{movieParam.Title}</h2><button onClick={props.clickMe}>Nominate me</button>
+        <div className="movie" key={movieid} internalnumber={index} movieid={movieid} >
+          <h3>Movie Number {index + 1}</h3>
+          <h2>{movie.Title}</h2>
+          {
+            movie.nominated && <p>Nominated</p>
+          }
+          <button onClick={() => props.addToNominationList(movie)}>Nominate me</button>
 
           {/* <div className="details">
             <p>👨: {actors}</p>
