@@ -27,22 +27,23 @@ export default function App() {
   }
 
   return (
-  <body>
+  <div>
     <section id="section-one">
       <article className="display-flex">
         <div className="row">
-              <h1>Shopify Shoppies Movie Search Bar Extravaganza</h1>
-            </div>
-            <div className="row">
+          <div className="left-container">
+              <h1 className="large-font">Shopify Shoppies Movie Search Bar Extravaganza</h1>
               <p onClick={getData}></p>
+              <h2 className="medium-font">Movie Title</h2>
             <MovieSearch onSubmit={onSubmit}></MovieSearch>
+          </div>
         </div>
       </article>
     </section>
     <section id="section-two">
       <article className="display-flex">
         <div className="row">
-              <h1>After Search Results</h1>
+              <h3 className="medium-font">After Search Results</h3>
             </div>
             <div className="row">
             <ResultsList addToNominationList={addToNominationList} movies={movies}></ResultsList>
@@ -52,14 +53,14 @@ export default function App() {
     <section id="section-three">
       <article className="display-flex">
         <div className="row">
-              <h1>Nominations List</h1>
+              <h4 className="medium-font">Nominations List</h4>
             </div>
             <div className="row">
             <NominationsList nominationsList={nominationsList}></NominationsList> 
         </div>
       </article>
     </section>
-  </body>
+  </div>
   );
 }
 
