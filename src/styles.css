@@ -21,8 +21,13 @@ body {
 }
 
 .left-container {
-  width: 90%;
+  width: 45%;
   max-width: 900px;
+}
+
+.right-container {
+  text-align: right;
+  width: 45%;
 }
 
 .large-font {
