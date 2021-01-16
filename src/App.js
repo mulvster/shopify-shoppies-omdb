@@ -44,15 +44,31 @@ export default function App() {
     <section id="section-two">
       <article className="display-flex">
         <div className="row">
+        <div className="margin-auto">
+            <div className="row">
+              <div className="card">
+                <div className="card__content">
+                  <div className="card__title">
+                  <h2 className="medium-font">After Search Results</h2>
+                  </div>
+                  <ResultsList addToNominationList={addToNominationList} movies={movies}></ResultsList>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="margin-auto left-container">
               <p onClick={getData}></p>
-              <h2 className="medium-font">After Search Results</h2>
-              <ResultsList addToNominationList={addToNominationList} movies={movies}></ResultsList>
           </div>
-          <div className="margin-auto right-container">
+          <div className="margin-auto">
             <div className="row">
-              <h4 className="medium-font">Nominations List</h4>
-              <NominationsList nominationsList={nominationsList}></NominationsList> 
+              <div className="card">
+                <div className="card__content">
+                  <div className="card__title">
+                    <h4 className="medium-font">Nominations List</h4>
+                  </div>
+                  <NominationsList nominationsList={nominationsList}></NominationsList> 
+                </div>
+              </div>
             </div>
           </div>
         </div>
