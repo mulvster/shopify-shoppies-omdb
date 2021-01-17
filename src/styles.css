@@ -4,6 +4,16 @@ body {
   font-family: 'Playfair display', serif;
 }
 
+.section-two {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-two > * {
+  width: 100%;
+}
+
 .display-flex {
   display: flex;
   align-items: center;
@@ -51,7 +61,7 @@ body {
 .inner-border{
   transition: transform 0.5s;
   -webkit-transition: transform 0.5s;
-  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 50px rgba(10, 10, 10, 0.2);
 }
 
 .cards {
@@ -73,6 +83,7 @@ body {
   @media(min-width: 56rem) {
     width: 33.3333%;
   } */
+  width: 100%;
 }
 
 .card {
@@ -82,7 +93,8 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 550px;
+  /* width: 550px; */
+  width: 100%;
 }
 
 .card__content {
@@ -90,6 +102,7 @@ body {
   flex: 1 1 auto;
   flex-direction: column;
   padding: 1rem;
+  width: 100%;
 }
 
 .card__title {
