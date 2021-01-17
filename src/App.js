@@ -49,8 +49,10 @@ export default function App() {
           <div className="">
               <h1 className="large-font">Shopify Shoppies</h1>
               <p onClick={getData}></p>
-              <h2 className="medium-font">Movie Title</h2>
-            <MovieSearch onSubmit={onSubmit}></MovieSearch>
+              <div className="movie-search-container">
+                <h2 className="medium-font">Movie Title</h2>
+                <MovieSearch onSubmit={onSubmit}></MovieSearch>
+              </div>
           </div>
         </div>
       </article>
