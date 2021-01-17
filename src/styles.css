@@ -35,19 +35,10 @@ body {
   padding: 1rem;
 }
 
-input[type=text] {
-  width: 130px;
+.search {
+  width: 200px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
-}
-
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-  width: 100%;
-}
-
-.search {
-  width: 100%;
   position: relative;
   display: flex;
 }
