@@ -4,6 +4,10 @@ body {
   font-family: 'Playfair display', serif;
 }
 
+.banner {
+  text-align: center;
+}
+
 .section-two {
   display: flex;
   max-width: 1200px;

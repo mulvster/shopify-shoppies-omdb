@@ -34,7 +34,7 @@ export default function App() {
 
   return (
   <div>
-    <section id="section-one">
+    <section className="section-one">
       <article className="display-flex">
         <div className="row">
           <div className="left-container">
@@ -46,7 +46,7 @@ export default function App() {
         </div>
       </article>
     </section>
-
+    {nominationsList.length === 5 && <div className="banner"><h2>{nominationsList.length} Nominations</h2></div>}
     <section className="section-two">
       <div className="row">
         <section className="card__container">
