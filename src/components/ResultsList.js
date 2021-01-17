@@ -21,7 +21,7 @@ export default function ResultsList(props) {
                     }
                     <h2 className="medium-font">{movie.Title}</h2>
                   </div>
-                  <button onClick={() => props.addToNominationList(movie)}>Nominate me</button>
+                  <button className="card-button" onClick={() => props.addToNominationList(movie)}>Nominate me</button>
                 </div>
               </div>
             </li>
