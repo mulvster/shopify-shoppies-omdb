@@ -3,6 +3,7 @@ import React from 'react';
 export default function ResultsList(props) {
   return (
     <div className="result-list">
+    <ul class="cards">
       {
         !!props.movies && props.movies.map((movie, index) => {
           const movieTitle = movie.Title;
@@ -11,10 +12,10 @@ export default function ResultsList(props) {
           const movieReleaseDate = new Date(movie.Released).toDateString();
 
           return (
-          <ul class="cards">
-            <li class="cards__item">
+          
+            <li class="cards__item" key={movieid}>
               <div className="card">
-                <div className="card__content movie" key={movieid} internalnumber={index} movieid={movieid}>
+                <div className="card__content movie" internalnumber={index} movieid={movieid}>
                   <div className="card__title">
                     {
                     movie.nominated && <p>Nominated</p>
@@ -25,10 +26,11 @@ export default function ResultsList(props) {
                 </div>
               </div>
             </li>
-          </ul>
+         
           );
         })
       }
+    </ul>
     </div>
   );
 }
