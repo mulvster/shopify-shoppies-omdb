@@ -57,7 +57,7 @@ export default function App() {
         </div>
       </article>
     </section>
-    {JSON.parse(nominationsList).length === 5 && <div className="banner"><h2>{JSON.parse(nominationsList).length} Nominations</h2></div>}
+    {JSON.parse(nominationsList).length === 5 && <div className="banner"><h2>Max of {JSON.parse(nominationsList).length} nominations reached</h2></div>}
     <section className="section-two">
       <div className="row">
         <section className="card__container">

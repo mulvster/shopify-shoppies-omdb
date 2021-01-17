@@ -12,6 +12,13 @@ body {
 
 .banner {
   text-align: center;
+  display: block;
+  border: 1px solid black;
+  text-align: center;
+  color: #451;
+  background: black;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0,0,0,.15) inset, 0 6px 10px rgba(0,0,0,.15);
 }
 
 .movie-search-container {
@@ -225,6 +232,8 @@ h2 {
 
 .already-nominated {
   color:#733b7c;
+  text-decoration: underline;
+  font-size: 1rem;
 }
 
 .card-button:hover {
