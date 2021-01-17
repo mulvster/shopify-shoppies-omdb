@@ -166,7 +166,6 @@ h2 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* width: 550px; */
   width: 100%;
 }
 
@@ -186,21 +185,39 @@ h2 {
 
 .card-button {
   margin: auto;
-  max-width: 200px;
-  background-color: black;
-  color: white;
-  border-radius: 2px;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+  height: 30px;
+  width: 90px;
+  background-color: #f6654f;
+  align-items: center;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all ease-in-out 400ms;
+  color: white;
+  font-family: 'Playfair display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  display: table-cell;
+  border-radius: 2px;
 }
 
 .card-button.disabled {
   background-color: rebeccapurple;
 }
 
-.card-button.enabled:hover {
-  border: 1px solid black;
+.card-button:hover {
+  border: 1px solid #733b7c;
   background-color: transparent;
-  color: black;
+  color: #733b7c;
+  transition: all ease-in-out 400ms;
+}
+
+.card-button.enabled:hover {
+  border: 1px solid #733b7c;
+  background-color: transparent;
+  color: #733b7c;
   transition: all ease-in-out 400ms;
 }
 

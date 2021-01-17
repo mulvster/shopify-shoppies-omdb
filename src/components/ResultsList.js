@@ -22,7 +22,7 @@ export default function ResultsList(props) {
                     }
                     <h2 className="medium-font">{movie.Title}</h2>
                   </div>
-                  <button disabled={movie.nominated} className={`card-button ${movie.nominated ? "disabled" : "enabled"}`} onClick={() => props.addToNominationList(movie)}>Nominate me</button>
+                  <button disabled={movie.nominated} className={`card-button ${movie.nominated ? "disabled" : "enabled"}`} onClick={() => props.addToNominationList(movie)}>Nominate</button>
                 </div>
               </div>
             </li>
