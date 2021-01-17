@@ -64,7 +64,7 @@ export default function App() {
         <section className="card__container">
           <p className="display-none" onClick={getData}></p>
           <h2 className="medium-font">Search Results</h2>
-          <ResultsList canNominate={JSON.parse(nominationsList).length === 5}  addToNominationList={addToNominationList} movies={movies}></ResultsList>
+          <ResultsList canNominate={JSON.parse(nominationsList).length < 5}  addToNominationList={addToNominationList} movies={movies}></ResultsList>
         </section>
       </div>
       <div className="row">
