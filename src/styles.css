@@ -1,7 +1,7 @@
 body {
   min-width: 320px;
   margin: 0;
-  font-family: 'Playfair display', serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .section-one {
@@ -15,7 +15,6 @@ body {
   display: block;
   border: 1px solid black;
   text-align: center;
-  /* color: #451; */
   min-height: 10px;
   background: black;
   border-radius: 4px;
@@ -165,7 +164,8 @@ h2 {
   margin: 0;
   padding: 0;
   width: 100%;
-  font-family: 'Playfair display', serif;
+  font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 .cards__item {
@@ -209,7 +209,7 @@ h2 {
   cursor: pointer;
   transition: all ease-in-out 400ms;
   color: white;
-  font-family: 'Playfair display', serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-style: italic;
   font-size: 1rem;
   font-weight: 600;
