@@ -11,14 +11,21 @@ export default function ResultsList(props) {
           const movieReleaseDate = new Date(movie.Released).toDateString();
 
           return (
-            <div className="movie" key={movieid} internalnumber={index} movieid={movieid} >
-              <h3>Movie Number {index + 1}</h3>
-              <h2>{movie.Title}</h2>
-              {
-                movie.nominated && <p>Nominated</p>
-              }
-              <button onClick={() => props.addToNominationList(movie)}>Nominate me</button>
-            </div>
+          <ul class="cards">
+            <li class="cards__item">
+              <div className="card">
+                <div className="card__content movie" key={movieid} internalnumber={index} movieid={movieid}>
+                  <div className="card__title">
+                    {
+                    movie.nominated && <p>Nominated</p>
+                    }
+                    <h2 className="medium-font">{movie.Title}</h2>
+                  </div>
+                  <button onClick={() => props.addToNominationList(movie)}>Nominate me</button>
+                </div>
+              </div>
+            </li>
+          </ul>
           );
         })
       }
