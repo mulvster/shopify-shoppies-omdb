@@ -122,7 +122,11 @@ body {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
 }
 
-.card-button:hover {
+.card-button.disabled {
+  background-color: rebeccapurple;
+}
+
+.card-button.enabled:hover {
   border: 1px solid black;
   background-color: transparent;
   color: black;
