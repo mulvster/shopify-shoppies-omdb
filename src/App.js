@@ -19,11 +19,17 @@ export default function App() {
   }
 
   const addToNominationList = nomination => {
-    nomination.nominated = true;
     const movie = {...nomination, nominated: true}
     setMovies(movies.map(m => m.imdbID === nomination.imdbID ? movie : m))
     console.log('ADD TO NOMINATION LIST', nomination);
     setNominationsList([...nominationsList, movie])
+  }
+
+  const removeNomination = nomination => {
+    const movie = {...nomination, nominated: false}
+    setMovies(movies.map(m => m.imdbID === nomination.imdbID ? movie : m))
+    console.log('REMOVE FROM NOMINATION LIST', nomination);
+    setNominationsList(nominationsList.filter(m => m.imdbID !== movie.imdbID))
   }
 
   return (
@@ -41,30 +47,20 @@ export default function App() {
       </article>
     </section>
 
-    <section id="section-two">
-      <article className="display-flex">
-        <div className="row">
-          <div className="margin-auto left-container">
-              <p onClick={getData}></p>
-              <h2 className="medium-font">After Search Results</h2>
-              <ResultsList addToNominationList={addToNominationList} movies={movies}></ResultsList>
-          </div>
-          <div className="margin-auto">
-            <div className="row">
-              <div className="card card__container">
-                <div className="inner-border">
-                  <div className="card__content">
-                    <div className="card__title">
-                      <h4 className="medium-font">Nominations List</h4>
-                    </div>
-                    <NominationsList nominationsList={nominationsList}></NominationsList> 
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
+    <section className="section-two">
+      <div className="row">
+        <section className="card__container">
+          <p onClick={getData}></p>
+          <h2 className="medium-font">Search Results</h2>
+          <ResultsList addToNominationList={addToNominationList} movies={movies}></ResultsList>
+        </section>
+      </div>
+      <div className="row">
+        <section className="card__container">
+          <h2 className="medium-font">Nominations List</h2>
+          <NominationsList movies={nominationsList} removeNomination={removeNomination}></NominationsList> 
+        </section>
+      </div>
     </section>
   </div>
   );
