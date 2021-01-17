@@ -46,8 +46,8 @@ export default function App() {
     <section className="section-one">
       <article className="display-flex">
         <div className="row">
-          <div className="left-container">
-              <h1 className="large-font">Shopify Shoppies Movie Search Bar Extravaganza</h1>
+          <div className="">
+              <h1 className="large-font">Shopify Shoppies</h1>
               <p onClick={getData}></p>
               <h2 className="medium-font">Movie Title</h2>
             <MovieSearch onSubmit={onSubmit}></MovieSearch>

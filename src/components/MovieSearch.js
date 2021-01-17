@@ -16,11 +16,13 @@ export default function MovieSearch(props) {
   }
 
   return (
-    <div className="">
-      <form onSubmit={submitForm}>
-        <input value={searchTerm} onChange={event => setSearchTerm(event.target.value)} type="text"></input>
-        <button type="submit">Search</button>
-      </form>
+    <div className="wrap">
+      <div className="search">
+        <input className="searchTerm" value={searchTerm} onChange={event => setSearchTerm(event.target.value)} type="text"  placeholder="Search movie title"></input>
+          <button type="submit" class="searchButton">
+            <i className="fa fa-search"></i>
+        </button>
+      </div>
     </div>
   );
 }
