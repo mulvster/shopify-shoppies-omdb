@@ -6,7 +6,7 @@ export default function NominationsList(props) {
   
   return (
     <div className="nomination-list">
-    <ul class="cards">
+    <ul className="cards">
       {
         !!props.movies && props.movies.map((movie, index) => {
           const movieTitle = movie.Title;
@@ -16,7 +16,7 @@ export default function NominationsList(props) {
 
           return (
           
-            <li class="cards__item" key={movieid} >
+            <li className="cards__item" key={movieid} >
               <div className="card">
                 <div className="card__content movie" internalnumber={index} movieid={movieid}>
                   <div className="card__title">

@@ -1,35 +1,44 @@
+import { useState } from 'react';
+import useLocalStorage from 'react-use-localstorage';
+
 import './App.css';
 import '../src/styles.css';
-import MovieSearch from './components/MovieSearch';
+
 import { getData } from './network';
-import { useState } from 'react';
+
+import MovieSearch from './components/MovieSearch';
 import ResultsList from './components/ResultsList';
 import NominationsList from './components/NominationsList';
 
 export default function App() {
   const [movies, setMovies] = useState([]);
-  const [nominationsList, setNominationsList] = useState([]);
+  const [nominationsList, setNominationsList] = useLocalStorage("useLocalStorage", "[]");
 
+  const updateMovies = (movies, nominationsList) => {
+    const list = JSON.parse(nominationsList)
+    setMovies(movies.map(m => list.find(n => n.imdbID === m.imdbID) ? {...m, nominated: true} : m))
+  }
 
   const onSubmit = searchTerm => {
    getData(searchTerm).then(data => {
     const result = data.Search
-     setMovies(result);
+    if (result) {
+      updateMovies(result, nominationsList)
+    }
    })
   }
 
   const addToNominationList = nomination => {
-    const movie = {...nomination, nominated: true}
-    setMovies(movies.map(m => m.imdbID === nomination.imdbID ? movie : m))
-    console.log('ADD TO NOMINATION LIST', nomination);
-    setNominationsList([...nominationsList, movie])
+    const list = JSON.stringify([...JSON.parse(nominationsList), nomination])
+    setNominationsList(list)
+    updateMovies(movies, list)
   }
 
   const removeNomination = nomination => {
     const movie = {...nomination, nominated: false}
     setMovies(movies.map(m => m.imdbID === nomination.imdbID ? movie : m))
     console.log('REMOVE FROM NOMINATION LIST', nomination);
-    setNominationsList(nominationsList.filter(m => m.imdbID !== movie.imdbID))
+    setNominationsList(JSON.stringify(JSON.parse(nominationsList).filter(m => m.imdbID !== movie.imdbID)))
   }
 
   return (
@@ -46,7 +55,7 @@ export default function App() {
         </div>
       </article>
     </section>
-    {nominationsList.length === 5 && <div className="banner"><h2>{nominationsList.length} Nominations</h2></div>}
+    {JSON.parse(nominationsList).length === 5 && <div className="banner"><h2>{JSON.parse(nominationsList).length} Nominations</h2></div>}
     <section className="section-two">
       <div className="row">
         <section className="card__container">
@@ -58,7 +67,7 @@ export default function App() {
       <div className="row">
         <section className="card__container">
           <h2 className="medium-font">Nominations List</h2>
-          <NominationsList movies={nominationsList} removeNomination={removeNomination}></NominationsList> 
+          <NominationsList movies={JSON.parse(nominationsList)} removeNomination={removeNomination}></NominationsList> 
         </section>
       </div>
     </section>
