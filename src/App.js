@@ -51,12 +51,14 @@ export default function App() {
           </div>
           <div className="margin-auto">
             <div className="row">
-              <div className="card">
-                <div className="card__content">
-                  <div className="card__title">
-                    <h4 className="medium-font">Nominations List</h4>
+              <div className="card card__container">
+                <div className="inner-border">
+                  <div className="card__content">
+                    <div className="card__title">
+                      <h4 className="medium-font">Nominations List</h4>
+                    </div>
+                    <NominationsList nominationsList={nominationsList}></NominationsList> 
                   </div>
-                  <NominationsList nominationsList={nominationsList}></NominationsList> 
                 </div>
               </div>
             </div>
