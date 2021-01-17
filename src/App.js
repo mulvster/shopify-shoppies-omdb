@@ -61,7 +61,7 @@ export default function App() {
     <section className="section-two">
       <div className="row">
         <section className="card__container">
-          <p onClick={getData}></p>
+          <p className="display-none" onClick={getData}></p>
           <h2 className="medium-font">Search Results</h2>
           <ResultsList addToNominationList={addToNominationList} movies={movies}></ResultsList>
         </section>

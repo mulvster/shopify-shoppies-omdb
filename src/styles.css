@@ -62,7 +62,7 @@ h2 {
 }
 
 .searchTerm:focus{
-  color: #f6654f;
+  color: black;
 }
 
 .searchButton {
@@ -116,7 +116,7 @@ h2 {
 }
 
 .medium-font {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .small-font {
@@ -129,6 +129,12 @@ h2 {
 
 .card__container {
   perspective: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.display-none {
+  display: none;
 }
 
 .inner-border{
@@ -198,4 +204,14 @@ h2 {
   background-color: transparent;
   color: black;
   transition: all ease-in-out 400ms;
+}
+
+
+@media (max-width: 900px) {
+  .section-two {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    flex-direction: column;
+  }
 }
