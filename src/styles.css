@@ -57,8 +57,19 @@ input[type=text]:focus {
   background-color: white;
 }
 
+.card__title h2 {
+  text-shadow: none;
+}
+
+.movie-search-container .medium-font {
+  color: white;
+}
+
 h2 {
   text-align: center;
+  text-shadow: 3px 3px 20px #733b7c,
+  -2px 1px 30px #733b7c;
+    color: white;
 }
 
 .searchTerm:focus{
@@ -113,10 +124,15 @@ h2 {
 
 .large-font {
   font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 3px 3px 20px #733b7c,
+    -2px 1px 30px #733b7c;
+    color: white;
 }
 
 .medium-font {
   font-size: 1.25rem;
+  color: #733b7c;
 }
 
 .small-font {
@@ -204,7 +220,11 @@ h2 {
 }
 
 .card-button.disabled {
-  background-color: rebeccapurple;
+  display: none;
+}
+
+.already-nominated {
+  color:#733b7c;
 }
 
 .card-button:hover {

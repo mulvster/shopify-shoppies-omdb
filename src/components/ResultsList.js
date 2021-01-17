@@ -18,9 +18,10 @@ export default function ResultsList(props) {
                 <div className="card__content movie" internalnumber={index} movieid={movieid}>
                   <div className="card__title">
                     {
-                    movie.nominated && <p>Nominated</p>
+                    movie.nominated && <p className="already-nominated">Nominated</p>
                     }
                     <h2 className="medium-font">{movie.Title}</h2>
+                    <h2 className="medium-font">Year of release: {movie.Year}</h2>
                   </div>
                   <button disabled={movie.nominated} className={`card-button ${movie.nominated ? "disabled" : "enabled"}`} onClick={() => props.addToNominationList(movie)}>Nominate</button>
                 </div>
