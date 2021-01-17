@@ -175,14 +175,12 @@ h2 {
   flex: 1 1 auto;
   flex-direction: column;
   padding: 1rem;
-  width: 100%;
 }
 
 .card__title {
   font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: 2px;
-  text-transform: uppercase;
   text-align: center;
 }
 
