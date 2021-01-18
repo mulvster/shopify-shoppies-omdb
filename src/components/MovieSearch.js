@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
 export default function MovieSearch(props) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [value] = useDebounce(searchTerm, 1000);
+  const [searchTerm, setSearchTerm] = useState(props.searchTerm);
+  const [value] = useDebounce(searchTerm, 250);
 
   useEffect(() => {
     props.onSubmit(value);

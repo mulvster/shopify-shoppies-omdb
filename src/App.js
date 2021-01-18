@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useLocalStorage from 'react-use-localstorage';
 
-import './App.css';
-import '../src/styles.css';
+import './styles.css';
 
 import { getData } from './network';
 
@@ -12,7 +11,23 @@ import NominationsList from './components/NominationsList';
 
 export default function App() {
   const [movies, setMovies] = useState([]);
-  const [nominationsList, setNominationsList] = useLocalStorage("useLocalStorage", "[]");
+  const [nominationsList, setNominationsList] = useLocalStorage("nominationsList", "[]");
+  const [searchTerm, setSearchTerm] = useLocalStorage("searchTerm", "");
+
+  useEffect(() => {
+    if (searchTerm) {
+      getMovieData(searchTerm)
+    }
+  }, [])
+
+  function getMovieData(searchTerm) {
+    getData(searchTerm).then(data => {
+      const result = data.Search
+      if (result) {
+        updateMovies(result, nominationsList)
+      }
+    })
+  }
 
   const updateMovies = (movies, nominationsList) => {
     const list = JSON.parse(nominationsList)
@@ -20,12 +35,8 @@ export default function App() {
   }
 
   const onSubmit = searchTerm => {
-   getData(searchTerm).then(data => {
-    const result = data.Search
-    if (result) {
-      updateMovies(result, nominationsList)
-    }
-   })
+   getMovieData(searchTerm)
+   setSearchTerm(searchTerm)
   }
 
   const addToNominationList = nomination => {
@@ -51,7 +62,7 @@ export default function App() {
               <p onClick={getData}></p>
               <div className="movie-search-container">
                 <h2 className="medium-font">Movie Title</h2>
-                <MovieSearch onSubmit={onSubmit}></MovieSearch>
+                <MovieSearch searchTerm={searchTerm} onSubmit={onSubmit}></MovieSearch>
               </div>
           </div>
         </div>

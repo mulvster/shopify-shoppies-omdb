@@ -20,7 +20,7 @@ export default function NominationsList(props) {
               <div className="card">
                 <div className="card__content movie" internalnumber={index} movieid={movieid}>
                   <div className="card__title">
-                    <h2 className="medium-font">{movie.Title}</h2>
+                    <h2 className="medium-font">{movie.Title} ({movie.Year})</h2>
                   </div>
                   <button className="card-button" onClick={() => props.removeNomination(movie)}>Remove</button>
                 </div>
