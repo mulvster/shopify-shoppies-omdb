@@ -58,7 +58,7 @@ export default function App() {
       <article className="display-flex">
         <div className="row">
           <div className="">
-              <h1 className="large-font">Shopify Shoppies</h1>
+              <h1 className="large-font">OMDB Movie Database</h1>
               <p onClick={getData}></p>
               <div className="movie-search-container">
                 <h2 className="medium-font">Movie Title</h2>
